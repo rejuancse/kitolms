@@ -1,0 +1,60 @@
+body {
+	color: var(--kitolms-text-color);
+	font-size: 15px;
+	font-family: 'Muli', sans-serif;
+	margin: 0;
+	overflow-x: hidden !important;
+	font-weight: 400;
+}
+.has-drop-cap:not(:focus):first-letter {
+    font-size: 62px;
+    font-weight: 700;
+    font-style: normal;
+}
+.wp-block-quote.is-large p, 
+.wp-block-quote.is-style-large p {
+    font-size: 22px;
+}
+.editor-styles-wrapper .wp-block-quote.is-style-default {
+    background: #f7f9fc;
+    padding: 28px 28px 28px 100px;
+    position: relative;
+}
+.wp-block-quote.is-style-default p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+.wp-block-quote p .has-major-color {
+    color: #03b97c;
+}
+.wp-block-quote p .has-kitolms-text-color {
+    color: #3c4852;
+}
+.wp-block-quote p .has-dark-gray-color {
+    color: #4e6579;
+}
+
+h1.block-editor-rich-text__editable .has-major-color,
+h2.block-editor-rich-text__editable .has-major-color,
+h3.block-editor-rich-text__editable .has-major-color,
+h4.block-editor-rich-text__editable .has-major-color,
+h5.block-editor-rich-text__editable .has-major-color,
+h6.block-editor-rich-text__editable .has-major-color  {
+    color: #03b97c;
+}
+h1.block-editor-rich-text__editable .has-kitolms-text-color,
+h2.block-editor-rich-text__editable .has-kitolms-text-color,
+h3.block-editor-rich-text__editable .has-kitolms-text-color,
+h4.block-editor-rich-text__editable .has-kitolms-text-color,
+h5.block-editor-rich-text__editable .has-kitolms-text-color,
+h6.block-editor-rich-text__editable .has-kitolms-text-color {
+    color: #3c4852;
+}
+h1.block-editor-rich-text__editable .has-dark-gray-color,
+h2.block-editor-rich-text__editable .has-dark-gray-color,
+h3.block-editor-rich-text__editable .has-dark-gray-color,
+h4.block-editor-rich-text__editable .has-dark-gray-color,
+h5.block-editor-rich-text__editable .has-dark-gray-color,
+h6.block-editor-rich-text__editable .has-dark-gray-color {
+    color: #4e6579;
+}

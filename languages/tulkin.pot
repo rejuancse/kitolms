@@ -1,0 +1,526 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Kitolms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-29 07:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.5; wp-5.8.1\n"
+"X-Domain: kitolms"
+
+#. 1: comment date, 2: comment time
+#: lib/Kitolms_Comments.php:43
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:409
+#: lib/main-function/kitolms-functions.php:424
+#, php-format
+msgid "%d"
+msgid_plural "%d"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tutor/single/course/reviews.php:93
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: register.php:58
+msgid "*******"
+msgstr ""
+
+#: 404.php:21
+msgid "404 page"
+msgstr ""
+
+#. Name of the template
+msgid "404 Page Template"
+msgstr ""
+
+#: tutor/single/course/instructors.php:23
+msgid "About the instructor"
+msgstr ""
+
+#: tutor/single/course/instructors.php:23
+msgid "About the instructors"
+msgstr ""
+
+#: tutor/single/course/course-enroll-box.php:14
+msgid "Acctual Price"
+msgstr ""
+
+#: woocommerce/single-product/tabs/additional-information.php:22
+msgid "Additional information"
+msgstr ""
+
+#: lib/sub-header.php:104
+msgid "Albums"
+msgstr ""
+
+#: woocommerce/cart/cart.php:151 woocommerce/cart/cart.php:152
+#: woocommerce/checkout/form-coupon.php:37
+#: woocommerce/checkout/form-coupon.php:37
+msgid "Apply coupon"
+msgstr ""
+
+#: woocommerce/cart/cart.php:95
+msgid "Available on backorder"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:46
+msgid "Awaiting product image"
+msgstr ""
+
+#: 404.php:10
+msgid "Back To Home"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:25
+msgid "Billing &amp; Shipping"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:29
+msgid "Billing details"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:330
+msgid "Blog"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:408
+#: lib/main-function/kitolms-functions.php:423
+msgid "Cart"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:25
+msgid "Click here to enter your code"
+msgstr ""
+
+#: comments.php:62 comments.php:65 comments.php:66
+msgid "Comments"
+msgstr ""
+
+#: comments.php:128
+msgid "Comments are closed."
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:190
+msgid "Contact Form 7"
+msgstr ""
+
+#: page-full-width.php:24 page.php:22 post-format/entry-content.php:5
+#: post-format/entry-content.php:16
+#, php-format
+msgid "Continue reading%s"
+msgstr ""
+
+#: woocommerce/cart/cart.php:149 woocommerce/checkout/form-coupon.php:33
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:147
+msgid "Coupon:"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:332
+msgid "Course Archive"
+msgstr ""
+
+#: tutor/single/course/instructors.php:72
+msgid "Courses"
+msgstr ""
+
+#: woocommerce/checkout/form-billing.php:54
+msgid "Create an account?"
+msgstr ""
+
+#: tutor/single-course.php:49 tutor/single-course-enrolled.php:48
+msgid "Curriculum"
+msgstr ""
+
+#: woocommerce/single-product/tabs/description.php:22
+msgid "Description"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:64
+msgid "Don't have account?"
+msgstr ""
+
+#: lib/Kitolms_Comments.php:66
+msgid "Edit"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:164
+msgid "Elementor"
+msgstr ""
+
+#: register.php:48
+msgid "Email"
+msgstr ""
+
+#: register.php:47 woocommerce/myaccount/form-lost-password.php:47
+msgid "Enter Email"
+msgstr ""
+
+#: lib/sub-header.php:102
+msgid "Event Details"
+msgstr ""
+
+#: tutor/single/course/course-topics.php:134
+msgid "Expired"
+msgstr ""
+
+#: register.php:34 register.php:35
+msgid "First Name"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:108
+msgid "Footer1"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:120
+msgid "Footer2"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:42
+#: woocommerce/myaccount/form-lost-password.php:57
+#: woocommerce/myaccount/form-lost-password.php:57
+msgid "Forgot password"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:34
+msgid "Forgot Password banner image"
+msgstr ""
+
+#: tutor/related-course.php:94 lib/main-function/kitolms-functions.php:540
+msgid "Free"
+msgstr ""
+
+#: woocommerce/content-product.php:69
+msgid "Funds Raised"
+msgstr ""
+
+#: lib/sub-header.php:106
+msgid "Gallery"
+msgstr ""
+
+#: woocommerce/content-product.php:74
+msgid "Goal"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:25
+msgid "Have a coupon?"
+msgstr ""
+
+#: lib/login-register.php:36
+msgid "Hi,"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:276
+msgid "Home"
+msgstr ""
+
+#. Name of the template
+msgid "Homepage Default"
+msgstr ""
+
+#. URI of the theme
+msgid "http://demo-kitolms.wpqxtheme.com/"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://wpqxtheme.com/"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:30
+msgid "If you have a coupon code, please apply it below."
+msgstr ""
+
+#: tutor/single-course.php:52 tutor/single-course-enrolled.php:51
+msgid "Instructor"
+msgstr ""
+
+#: register.php:40 register.php:41
+msgid "Last Name"
+msgstr ""
+
+#: comments.php:86 lib/kitolms-comments.php:75
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: tutor/related-course.php:112 tutor/single/course/lead-info.php:58
+#: tutor/single/course/enrolled/lead-info.php:57
+msgid "Lectures"
+msgstr ""
+
+#: tutor/single/course/course-topics.php:37
+msgid "Lessons"
+msgstr ""
+
+#: tutor/single/course/course-topics.php:136
+msgid "Live"
+msgstr ""
+
+#: register.php:29
+msgid "Login Your Account"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:44
+msgid ""
+"Lost your password? Please enter your username or email address. You will "
+"receive a link to create a new password via email."
+msgstr ""
+
+#: woocommerce/content-product.php:52
+msgid "Loves"
+msgstr ""
+
+#: 404.php:9
+msgid ""
+"Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi "
+"ultricies laoreet ullamcorper phasellus semper"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:198
+msgid "MailChimp for WordPress"
+msgstr ""
+
+#: woocommerce/content-product.php:78
+msgid "More Details"
+msgstr ""
+
+#: comments.php:66
+msgid "Next"
+msgstr ""
+
+#: tutor/single-course.php:46 tutor/single-course-enrolled.php:45
+msgid "Overview"
+msgstr ""
+
+#. Name of the template
+msgid "Page Full Width"
+msgstr ""
+
+#: page-full-width.php:29 page.php:27
+msgid "Pages:"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:541
+msgid "Paid"
+msgstr ""
+
+#: register.php:57
+msgid "Password"
+msgstr ""
+
+#: lib/sub-header.php:108
+msgid "Performer"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:249
+msgctxt "Poppins font: on or off"
+msgid "on"
+msgstr ""
+
+#: comments.php:85
+msgid "Post Comment"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:326
+msgid "Posts by "
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:292
+#: lib/main-function/kitolms-functions.php:294
+#: lib/main-function/kitolms-functions.php:296
+msgid "Posts made in"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:290
+msgid "Posts Tagged "
+msgstr ""
+
+#: comments.php:65
+msgid "Previous"
+msgstr ""
+
+#: woocommerce/cart/cart.php:33 woocommerce/cart/cart.php:100
+msgid "Price"
+msgstr ""
+
+#: functions.php:11
+msgid "Primary Menu"
+msgstr ""
+
+#: woocommerce/cart/cart.php:32 woocommerce/cart/cart.php:80
+msgid "Product"
+msgstr ""
+
+#: lib/sub-header.php:110
+msgid "Product Details"
+msgstr ""
+
+#: woocommerce/cart/cart.php:34 woocommerce/cart/cart.php:106
+msgid "Quantity"
+msgstr ""
+
+#: tutor/single/course/reviews.php:66
+msgid "rating"
+msgstr ""
+
+#: tutor/single/course/reviews.php:66 tutor/single/course/instructors.php:65
+msgid "ratings"
+msgstr ""
+
+#. Name of the template
+msgid "Register Page"
+msgstr ""
+
+#: woocommerce/single-product/related.php:27
+msgid "Related products"
+msgstr ""
+
+#: woocommerce/cart/cart.php:58
+msgid "Remove this item"
+msgstr ""
+
+#: tutor/single-course.php:55 tutor/single-course-enrolled.php:54
+#: tutor/single/course/lead-info.php:95
+#: tutor/single/course/enrolled/lead-info.php:95
+msgid "Reviews"
+msgstr ""
+
+#: lib/sub-header.php:78
+msgid "Search"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:298
+msgid "Search results for"
+msgstr ""
+
+#: lib/main-function/Theme.php:85
+msgid "Sending user info, please wait..."
+msgstr ""
+
+#: lib/sub-header.php:61
+msgid "Shop"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:96
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:64
+msgid "Sign In"
+msgstr ""
+
+#: register.php:62
+msgid "Sign Up"
+msgstr ""
+
+#: register.php:20
+msgid "Signup banner image"
+msgstr ""
+
+#: header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: tutor/single/course/lead-info.php:64
+#: tutor/single/course/enrolled/lead-info.php:63
+msgid "Student Enrolled"
+msgstr ""
+
+#: tutor/single/course/reviews.php:30
+msgid "Student Feedback"
+msgstr ""
+
+#: tutor/single/course/instructors.php:84
+msgid "students"
+msgstr ""
+
+#: woocommerce/cart/cart.php:35 woocommerce/cart/cart.php:128
+msgid "Subtotal"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:48
+msgid "support@wpkitolms.com"
+msgstr ""
+
+#: tutor/single/course/course-topics.php:29
+msgid "Topics for this course"
+msgstr ""
+
+#. Name of the theme
+msgid "Kitolms"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:154
+msgid "Kitolms Core"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:180
+msgid "Kitolms Demo Importer"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Kitolms LMS is clean, creative, powerful, flexible, highly customizable and "
+"Elementor ready WordPress LMS theme."
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:215
+msgid "Tutor"
+msgstr ""
+
+#: woocommerce/cart/cart.php:158
+msgid "Update cart"
+msgstr ""
+
+#: register.php:52 register.php:53
+msgid "Username"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:206
+msgid "Widget Importer & Exporter"
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:110
+#: lib/main-function/kitolms-functions.php:122
+msgid "Widgets in this area will be shown in footer section."
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:98
+msgid "Widgets in this area will be shown on Sidebar."
+msgstr ""
+
+#: lib/main-function/kitolms-functions.php:172
+msgid "WooCoomerce"
+msgstr ""
+
+#. Author of the theme
+msgid "WPQX Theme"
+msgstr ""
+
+#: register.php:88
+msgid "You Are Already Logged In"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:26
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:56
+msgid "Your order"
+msgstr ""

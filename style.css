@@ -1,0 +1,268 @@
+/*
+Theme Name: Kitolms
+Theme URI: http://demo-kitolms.wpqxtheme.com/
+Author: WPQX Theme
+Author URI: https://wpqxtheme.com/
+Description: Kitolms is a clean, creative, powerful, flexible, highly customizable LMS (Learning Management System) WordPress theme. It's suitable for school, university, college, education so that you can use to launch a website for University or School quickly. This theme is designed especially for creating and sell courses. You can sell both online course either onsite course. For online, each course can be separate into parts/sections and you can also create online quiz to evaluate learners.
+Version: 1.0.0
+Requires PHP: 5.6
+Tested up to: 5.6.1
+Text Domain: kitolms
+License: GNU General Public License v3.0 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
+Tags: lms, education, e-learning, blog, news, flexible-header, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready
+*/
+
+/* -------------------------------------- *
+*           WordPress Core                *
+* --------------------------------------- */
+.alignnone {
+  margin: 5px 20px 20px 0;
+  width: 100%;
+  height: auto;
+}
+.aligncenter,
+div.aligncenter {
+display: block;
+margin: 5px auto 5px auto;
+  width: 100%;
+  height: auto;
+}
+.alignright {
+float:right;
+margin: 5px 0 20px 20px;
+}
+.alignleft {
+float: left;
+margin: 5px 20px 20px 0;
+}
+a img.alignright {
+float: right;
+margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+  margin: 5px 20px 20px 0;
+}
+a img.alignleft {
+float: left;
+margin: 5px 20px 20px 0;
+}
+a img.aligncenter {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+.wp-caption {
+background: #fff;
+border: 1px solid #f0f0f0;
+max-width: 96%; /* Image does not overflow the content area */
+padding: 5px 3px 10px;
+text-align: center;
+}
+.wp-caption.alignnone {
+  margin: 5px 20px 20px 0;
+}
+.wp-caption.alignleft {
+  margin: 5px 20px 20px 0;
+}
+.wp-caption.alignright {
+  margin: 5px 0 20px 20px;
+}
+.wp-caption img {
+border: 0 none;
+height: auto;
+margin: 0;
+max-width: 98.5%;
+padding: 0;
+width: auto;
+}
+.wp-caption p.wp-caption-text {
+font-size: 11px;
+line-height: 17px;
+margin: 0;
+padding: 0 4px 5px;
+}
+.bypostauthor {
+font-size: 12px;
+}
+.gallery-caption {
+margin: 0;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+border: 0;
+clip: rect(1px, 1px, 1px, 1px);
+clip-path: inset(50%);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute !important;
+width: 1px;
+word-wrap: normal !important; 
+}
+.screen-reader-text:focus {
+background-color: #eee;
+clip: auto !important;
+clip-path: none;
+color: #444;
+display: block;
+font-size: 1em;
+height: auto;
+left: 5px;
+line-height: normal;
+padding: 15px 23px 14px;
+text-decoration: none;
+top: 5px;
+width: auto;
+z-index: 100000;
+/* Above WP toolbar. */
+}
+.boxwidth {
+  max-width: 1400px;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,.08);
+  margin: 0 auto;
+}
+/*
+* Gutenberg CSS
+**/
+/* Color */
+.single_article_wrap .article_body_wrap .has-major-color,
+
+.single_article_wrap .wp-block-pullquote blockquote.has-major-color, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-major-color, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-major-color > p {
+color: var(--kitolms-major-color);
+}
+.single_article_wrap .article_body_wrap .has-kitolms-text-color, 
+.single_article_wrap .wp-block-pullquote blockquote.has-secondary-color, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color > p {
+color: var(--kitolms-text-color);
+}
+.single_article_wrap .article_body_wrap .has-dark-gray-color, 
+.single_article_wrap .wp-block-pullquote blockquote.has-secondary-color, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color > p {
+color: #4e6579;
+}
+/* Background Color */
+.single_article_wrap .article_body_wrap .has-major-background-color{
+background-color: var(--kitolms-major-color);
+}
+.single_article_wrap .article_body_wrap .has-kitolms-text-background-color {
+background-color: var(--kitolms-text-color);
+}
+.single_article_wrap .article_body_wrap .has-dark-gray-background-color {
+background-color: #4e6579;
+}
+
+/* Font Size */
+.single_article_wrap .article_body_wrap .has-small-font-size,
+.single_article_wrap .wp-block-pullquote blockquote.has-small-font-size, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-small-font-size, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-small-font-size > p {
+font-size: 14px;
+}
+.single_article_wrap .article_body_wrap .has-normal-font-size, 
+.single_article_wrap .wp-block-pullquote blockquote.has-normal-font-size, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-normal-font-size, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-normal-font-size > p {
+font-size: 22px;
+}
+.single_article_wrap .article_body_wrap .has-large-font-size, 
+.single_article_wrap .wp-block-pullquote blockquote.has-large-font-size, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-large-font-size, 
+.single_article_wrap .wp-block-pullquote.is-style-solid-color blockquote.has-large-font-size > p {
+font-size: 36px;
+}
+.has-drop-cap:not(:focus):first-letter {
+  font-size: 62px;
+  font-weight: 700;
+  font-style: normal;
+}
+figure.aligncenter {
+  text-align: center;
+}
+.wp-block-image {
+  display: inline-block;
+  width: 100%;
+}
+.wp-block-quote.is-style-large p{
+font-size: 22px;
+}
+ul.wp-block-archives-list.wp-block-archives li {
+  line-height: 30px;
+}
+.article_body_wrap h3 {
+  margin-top: 20px;
+}
+.wp-block-image.alignfull img, 
+.wp-block-image.alignwide img {
+  height: auto;
+}
+.single_article_wrap input[type="submit"] {
+  color: #ffffff;
+  padding: 4px 25px;
+  cursor: pointer;
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background: var(--kitolms-major-color);;
+}
+.entry-content.wrap {
+  display: inline-table;
+}
+.entry-content blockquote {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  background: #f7f9fc;
+}
+.entry-content blockquote p {
+  padding: 0 90px;
+  margin: 20px 0;
+}
+.entry-content .page-links {
+  display: inherit;
+  width: 100%;
+}
+.comment-area img.avatar {
+  max-width: 70px;
+  border-radius: 50%;
+}
+.article_comments_thumb {
+  float: left;
+  width: 70px;
+}
+.comment-details .comment-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 0 15px;
+}
+.comment-details h4.author-name {
+  margin: 0;
+}
+.comment-details span.selected {
+  color: #6abb7c;
+  margin-left: 5px;
+  font-size: 16px;
+}
+.comment-list ul li {
+  margin-bottom: 30px;
+}
+.comment-list ul.children {
+  margin-left: 50px;
+  margin-top: 22px
+}
+.comment-respond input#submit {
+  padding: 14px 24px
+}
+h3#reply-title small {
+  margin-left: 10px;
+}
