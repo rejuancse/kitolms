@@ -1,16 +1,14 @@
 /*
 Theme Name: Kitolms
-Theme URI: http://demo-kitolms.wpqxtheme.com/
-Author: WPQX Theme
-Author URI: https://wpqxtheme.com/
+Author: Rejuan Ahamed
 Description: Kitolms is a clean, creative, powerful, flexible, highly customizable LMS (Learning Management System) WordPress theme. It's suitable for school, university, college, education so that you can use to launch a website for University or School quickly. This theme is designed especially for creating and sell courses. You can sell both online course either onsite course. For online, each course can be separate into parts/sections and you can also create online quiz to evaluate learners.
-Version: 1.0.0
+Version: 1.0.1
 Requires PHP: 5.6
-Tested up to: 5.6.1
+Tested up to: 5.8
 Text Domain: kitolms
 License: GNU General Public License v3.0 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
-Tags: lms, education, e-learning, blog, news, flexible-header, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready
+Tags: education, blog, news, flexible-header, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready
 */
 
 /* -------------------------------------- *
@@ -51,6 +49,9 @@ a img.aligncenter {
 display: block;
 margin-left: auto;
 margin-right: auto;
+}
+a:focus {
+  outline: thin dotted;
 }
 .wp-caption {
 background: #fff;
@@ -213,9 +214,6 @@ ul.wp-block-archives-list.wp-block-archives li {
   outline: none;
   border: none;
   background: var(--kitolms-major-color);;
-}
-.entry-content.wrap {
-  display: inline-table;
 }
 .entry-content blockquote {
   display: inline-block;

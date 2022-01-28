@@ -33,6 +33,9 @@ class Kitolms_Theme {
         add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
         add_theme_support( 'automatic-feed-links' );
 
+        # Custom Logo.
+        add_theme_support( 'custom-logo');
+
 		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
 
@@ -135,6 +138,7 @@ class Kitolms_Theme {
         wp_enqueue_script('kitolms-daterangepicker',    KITOLMS_JS.'daterangepicker.js',array(),false,true);
         wp_enqueue_script('kitolms-metisMenu',  KITOLMS_JS.'metisMenu.min.js',array(),false,true);
         if ( is_singular() ) {wp_enqueue_script( 'comment-reply' );}
+        wp_enqueue_script('kitolms-navigation',  KITOLMS_JS.'navigation.js',array(),false,true);
         wp_enqueue_script('kitolms-custom', KITOLMS_JS.'custom.js',array(),false,true);
         wp_enqueue_script('kitolms-main', KITOLMS_JS .'main.js',array(),false,true);
 

@@ -132,116 +132,6 @@ if(!function_exists('kitolms_widdget_init')):
 endif;
 
 
-
-/*-------------------------------------------------------
-*           Include the TGM Plugin Activation class
-*-------------------------------------------------------*/
-
-add_action( 'tgmpa_register', 'kitolms_register_required_plugins' );
-
-/**
- * Register the required plugins for this theme.
- *
- * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
- */
-function kitolms_register_required_plugins() {
-	/*
-	 * Array of plugin arrays. Required keys are name and slug.
-	 * If the source is NOT from the .org repo, then source is also required.
-	 */
-    $plugins = array(
-        array(
-            'name'                  => esc_html__( 'Kitolms Core', 'kitolms' ),
-            'slug'                  => 'kitolms-core',
-            'source'                => esc_url('https://demo.wpqxtheme.com/plugins/kitolms-core.zip'),
-            'required'              => true,
-            'version'               => '',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-            'external_url'          => '',
-        ),
-        array(
-            'name'                  => esc_html__( 'Elementor', 'kitolms' ),
-            'slug'                  => 'elementor',
-            'required'              => true,
-            'version'               => '',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-        ),
-        array(
-            'name'                  => esc_html__( 'WooCoomerce', 'kitolms' ),
-            'slug'                  => 'woocommerce',
-            'required'              => true,
-            'version'               => '',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-        ),
-        array(
-            'name'                  => esc_html__( 'Kitolms Demo Importer', 'kitolms' ),
-            'slug'                  => 'kitolms-demo-importer',
-            'source'                => esc_url('https://demo.wpqxtheme.com/plugins/kitolms-demo-importer.zip'),
-            'required'              => false,
-            'version'               => '',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-            'external_url'          => '',
-        ),
-        array(
-            'name'                  => esc_html__( 'Contact Form 7', 'kitolms' ),
-            'slug'                  => 'contact-form-7',
-            'required'              => false,
-            'version'               => '',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-        ),
-        array(
-            'name'                  => esc_html__( 'MailChimp for WordPress', 'kitolms' ),
-            'slug'                  => 'mailchimp-for-wp',
-            'required'              => false,
-            'version'               => '',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-        ),
-        array(
-            'name'                  => esc_html__( 'Widget Importer & Exporter', 'kitolms' ),
-            'slug'                  => 'widget-importer-exporter',
-            'source'                => 'https://downloads.wordpress.org/plugin/widget-importer-exporter.1.6.zip',
-            'required'              => false,
-            'version'               => '',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-        ),
-        array(
-            'name'                  => esc_html__( 'Tutor', 'kitolms' ),
-            'slug'                  => 'tutor',
-            'required'              => true,
-            'version'               => '',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-        ),
-	);
-
-	/*
-	 * Array of configuration settings. Amend each line as needed.
-	 */
-	$config = array(
-		'id'           => 'kitolms',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-		'default_path' => '',                      // Default absolute path to bundled plugins.
-		'menu'         => 'tgmpa-install-plugins', // Menu slug.
-		'has_notices'  => true,                    // Show admin notices or not.
-		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-		'message'      => '',                      // Message to output right before the plugins table.		
-	);
-
-	tgmpa( $plugins, $config );
-}
-/**
- * End TGM
- */
-
-
 if ( ! function_exists( 'kitolms_fonts_url' ) ) :
     function kitolms_fonts_url() {
     $fonts_url = '';
@@ -340,12 +230,12 @@ endif;
 /** 
  * Main Menu custom class add
  * */ 
-function mainmenu_submenu_class($menu) {
-    $menu = preg_replace('/ class="sub-menu"/','/ class="sub-menu nav-dropdown nav-submenu" /', $menu);  
-    return $menu;  
-}
+// function mainmenu_submenu_class($menu) {
+//     $menu = preg_replace('/ class="sub-menu"/','/ class="sub-menu nav-dropdown nav-submenu" /', $menu);  
+//     return $menu;  
+// }
 
-add_filter('wp_nav_menu','mainmenu_submenu_class');
+// add_filter('wp_nav_menu','mainmenu_submenu_class');
 
 
 /** 
@@ -469,31 +359,31 @@ function tm_additional_profile_fields( $user ) {
         <tr>
             <th><label for="facebook"><?php esc_html('Facebook', 'kitolms') ?></label></th>
             <td>
-                <input type="text" name="facebook" id="facebook" value="<?php echo esc_url($facebook); ?>" placeholder="<?php esc_html('Facebook', 'kitolms') ?>Facebook URL...">
+                <input type="text" name="facebook" id="facebook" value="<?php echo esc_url($facebook); ?>" placeholder="<?php esc_attr('Facebook', 'kitolms') ?>">
             </td>
         </tr>
         <tr>
             <th><label for="twitter"><?php esc_html('Twitter', 'kitolms') ?></label></th>
             <td>
-                <input type="text" name="twitter" id="twitter" value="<?php echo esc_url($twitter); ?>" placeholder="<?php esc_html('Twitter URL...', 'kitolms') ?>">
+                <input type="text" name="twitter" id="twitter" value="<?php echo esc_url($twitter); ?>" placeholder="<?php esc_attr('Twitter URL...', 'kitolms') ?>">
             </td>
         </tr>
         <tr>
             <th><label for="linkedin"><?php esc_html('Linkedin', 'kitolms') ?></label></th>
             <td>
-                <input type="text" name="linkedin" id="linkedin" value="<?php echo esc_url($linkedin); ?>" placeholder="<?php esc_html('Linkedin URL...', 'kitolms') ?>">
+                <input type="text" name="linkedin" id="linkedin" value="<?php echo esc_url($linkedin); ?>" placeholder="<?php esc_attr('Linkedin URL...', 'kitolms') ?>">
             </td>
         </tr>
         <tr>
             <th><label for="youtube"><?php esc_html('YouTube', 'kitolms') ?></label></th>
             <td>
-                <input type="text" name="youtube" id="youtube" value="<?php echo esc_url($youtube); ?>" placeholder="<?php esc_html('YouTube URL...', 'kitolms') ?>">
+                <input type="text" name="youtube" id="youtube" value="<?php echo esc_url($youtube); ?>" placeholder="<?php esc_attr('YouTube URL...', 'kitolms') ?>">
             </td>
         </tr>
         <tr>
             <th><label for="dribbble"><?php esc_html('Dribbble', 'kitolms') ?></label></th>
             <td>
-                <input type="text" name="dribbble" id="dribbble" value="<?php echo esc_url($dribbble); ?>" placeholder="<?php esc_html('Dribbble URL...', 'kitolms') ?>">
+                <input type="text" name="dribbble" id="dribbble" value="<?php echo esc_url($dribbble); ?>" placeholder="<?php esc_attr('Dribbble URL...', 'kitolms') ?>">
             </td>
         </tr>
     </table>

@@ -2,7 +2,7 @@
 <?php get_template_part('lib/sub-header')?>
 
 <!-- ============================ article Start ================================== -->
-<section class="min">
+<section class="min" id="content">
     <div class="container">
         
         <div class="row justify-content-center">

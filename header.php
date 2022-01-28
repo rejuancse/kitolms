@@ -17,78 +17,88 @@
 /** Layout Header Style */
 $layout = get_theme_mod( 'boxfull_en', 'fullwidth' ); 
 $header_fixed = get_theme_mod( 'header_fixed', false ) ? 'sticky-menu' : '';
-$header_transparent = get_theme_mod('header_transparent', false);
-$transparent = ($header_transparent === true) ? (!is_blog()) ? 'header-transparent dark-text' : 'header-light head-shadow' : 'header-light head-shadow'; ?> 
+
+?> 
 
 <!-- #main-wrapper -->
 <div id="main-wrapper" class="hfeed site <?php echo esc_attr($layout); ?>">	
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'kitolms' ); ?></a>
 
-	<!-- Start Navigation -->
-	<div class="header <?php echo esc_html($transparent).' '.esc_html($header_fixed); ?>">
-
+	<header id="masthead" class="site-header header">
 		<div class="container">
-			<nav id="navigation" class="navigation navigation-landscape">
-				<div class="nav-header">
-					<a class="nav-brand" href="<?php echo esc_url(home_url()); ?>">
-						<?php
-							$logoimg   = get_theme_mod( 'logo', get_parent_theme_file_uri().'/assets/images/logo.png' );
-							$logotext  = get_theme_mod( 'logo_text', 'Kitolms' );
-							$logotype  = get_theme_mod( 'logo_style', 'logoimg' );
+			<div class="main-menu-wrap row clearfix">
+				<div class="col-sm-6 col-md-3 col-5 align-self-center">
+					<div class="kitolms-navbar-header">
+						<div class="logo-wrapper">
+							<?php if( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+								the_custom_logo();
+							}else { ?>
+								<h1 class="site-title">
+									<a href="<?php echo esc_url(home_url()); ?>"><?php echo esc_html(get_bloginfo('name'));?> </a>
+								</h1>
+								<?php $tagline = get_bloginfo('description'); ?>
+								<?php if ( $tagline!='' ) { ?>
+									<p class="logo_tagline"><?php bloginfo('description'); ?></p><!-- Site Tagline --> 
+								<?php } ?>
+							<?php } ?>
+						</div>     
+					</div><!--/#kitolms-navbar-header-->   
+				</div><!--/.col-sm-2-->
 
-							if($logotype == 'logoimg') {
-								if(!empty($logoimg)){
-									echo '<img 
-											class="enter-logo img-responsive" 
-											src="'.esc_url($logoimg).'" 
-											alt="'.esc_html('Logo', 'Kitolms').'"
-											title="'.esc_html('Logo', 'Kitolms').'"
-									/>';
-								}else{
-									echo get_bloginfo('name');
-								}
-							}else{
-								if(!empty($logotext)){
-									echo '<h2 class="logo-text">'.esc_html($logotext).'</h2>';
-								}else{
-									echo get_bloginfo('name');
-								}
-							}
-						?>
-					</a>
-					<div class="nav-toggle"></div>
-					<div class="mobile_nav">
-						<ul>
-							<li>
-								<a href="javascript:void(0);" data-toggle="modal" data-target="#login" class="crs_yuo12 w-auto text-white theme-bg">
-									<span class="embos_45"><i class="fas fa-sign-in-alt mr-1"></i><?php _e('Sign In', 'kitolms'); ?></span>
-								</a>
-							</li>
-						</ul>
-					</div>
+				<!-- Mobile Menu in Search -->
+				<div class="mobile-register col-sm-6 col-md-9 col-7 d-lg-none align-self-center align-self-end"> 
+					<div id="site-navigation" class="main-navigation toggled">
+						<div class="navbar-header clearfix">
+							<button id="kitolms-navmenu" class="menu-toggle navbar-toggle kitolms-navmenu-button" aria-controls="primary-menu" aria-expanded="false" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="slicknav_icon kitolms-navmenu-button-open"></span>
+							</button>
+						</div>
+					</div><!-- #site-navigation -->
 				</div>
 
-				<!-- Main menu -->
-				<div class="nav-menus-wrapper">
+				<div class="col-sm-6 col-md-9 col-7 common-menu d-none d-lg-block">
 					<?php if ( has_nav_menu( 'primary' ) ) { ?>
-						<?php 
-							wp_nav_menu(  array(
-									'theme_location' => 'primary',
-									'container'      => '', 
-									'menu_class'     => 'nav-menu',
-									'fallback_cb'    => 'wp_page_menu',
-									'depth'          => 4,
-								)
-							); 
-						?>      
+						<div id="main-menu" class="common-menu-wrap">
+							<?php 
+								wp_nav_menu(  array(
+										'theme_location' => 'primary',
+										'container'      => '', 
+										'menu_class'     => 'nav',
+										'fallback_cb'    => 'wp_page_menu',
+										'depth'          => 3,
+									)
+								); 
+							?>
+						</div><!--/#main-menu-->
 					<?php } ?>
+				</div><!--/.col-sm-9--> 
 
-					<!-- Login/Registration sections -->
-					<?php get_template_part( 'lib/login', 'register' ); ?>
-				</div>
-			</nav>
-		</div>
-	</div>
+				<div id="site-navigation" class="main-navigation toggled">
+					<ul id="primary-menu" class="nav navbar-nav nav-menu">
+						<div id="mobile-menu" class="hidden-lg-up d-lg-none">
+							<div class="collapse navbar-collapse">
+								<?php 
+									if ( has_nav_menu( 'primary' ) ) {
+										wp_nav_menu( array(
+											'theme_location'      => 'primary',
+											'container'           => false,
+											'menu_class'          => 'nav navbar-nav',
+											'fallback_cb'         => 'wp_page_menu',
+											'depth'               => 3,
+											'walker'              => new kitolms_mobile_navwalker()
+											)
+										); 
+									}
+								?>
+							</div>
+						</div><!--/.#mobile-menu-->
+					</ul>
+				</div><!-- #site-navigation -->
+
+			</div><!--/.main-menu-wrap-->     
+		</div><!--/.container--> 
+	</header><!--/.header-->
+
 	<!-- End Navigation -->
 	<div class="clearfix"></div>
 	

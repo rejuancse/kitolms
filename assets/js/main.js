@@ -215,4 +215,118 @@ jQuery(document).ready(function($){
         }
     });
 
+
+
+    /* --------------------------------------
+    *       1. Menu Close Button
+    *  -------------------------------------- */
+    
+    if ($('#kitolms-navmenu').length > 0) {
+        var button = document.getElementById('kitolms-navmenu');
+        var span = button.getElementsByTagName('span')[0];
+
+        button.onclick =  function() {
+            span.classList.toggle('kitolms-navmenu-button-close');
+        };
+
+        $('#kitolms-navmenu').on('click', toggleOnClass);
+        function toggleOnClass(event) {
+            var toggleElementId = '#' + $(this).data('toggle'),
+            element = $(toggleElementId);
+            element.toggleClass('on');
+        }
+
+        // close hamburger menu after click a
+        $( '.menu li a' ).on("click", function(){
+            $('#kitolms-navmenu').click();
+        });
+
+        // Menu Toggler Rotate
+        $('#mobile-menu ul li span.menu-toggler').click(function(){
+            $(this).toggleClass('toggler-rotate');
+        })
+    }
+
+    /* --------------------------------------
+    *       8. Keyboard nevigations.
+    *  -------------------------------------- */
+    var isIe = /(trident|msie)/i.test( navigator.userAgent );
+
+    if ( isIe && document.getElementById && window.addEventListener ) {
+        window.addEventListener( 'hashchange', function() {
+            var id = location.hash.substring( 1 ),
+                element;
+
+            if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
+                return;
+            }
+
+            element = document.getElementById( id );
+
+            if ( element ) {
+                if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
+                    element.tabIndex = -1;
+                }
+
+                element.focus();
+            }
+        }, false );
+    }
+
+    /* --------------------------------------
+    *       8. Keyboard nevigations.
+    *  -------------------------------------- */
+    $('.main-navigation').on('keydown', function (e) {
+        if ($('.main-navigation').hasClass('toggled')) {
+            var focusableEls = $(' .main-navigation .menu-toggle, .main-navigation a[href]:not([disabled]), .main-navigation li');
+            var firstFocusableEl = focusableEls[0];
+            var lastFocusableEl = focusableEls[focusableEls.length - 1];
+            var KEYCODE_TAB = 9;
+            if (e.key === 'Tab' || e.keyCode === KEYCODE_TAB) {
+                if (e.shiftKey) /* shift + tab */ {
+                    if (document.activeElement === firstFocusableEl) {
+                        lastFocusableEl.focus();
+                        e.preventDefault();
+                    }
+                } else /* tab */ {
+                    if (document.activeElement === lastFocusableEl) {
+                        firstFocusableEl.focus();
+                        e.preventDefault();
+                    }
+                }
+            }
+        }
+    });
+
+
+    /* --------------------------------------
+    *       1. Menu Close Button
+    *  -------------------------------------- */
+    
+    if ($('#kitolms-navmenu').length > 0) {
+        var button = document.getElementById('kitolms-navmenu');
+        var span = button.getElementsByTagName('span')[0];
+
+        button.onclick =  function() {
+            span.classList.toggle('kitolms-navmenu-button-close');
+        };
+
+        $('#kitolms-navmenu').on('click', toggleOnClass);
+        function toggleOnClass(event) {
+            var toggleElementId = '#' + $(this).data('toggle'),
+            element = $(toggleElementId);
+            element.toggleClass('on');
+        }
+
+        // close hamburger menu after click a
+        $( '.menu li a' ).on("click", function(){
+            $('#kitolms-navmenu').click();
+        });
+
+        // Menu Toggler Rotate
+        $('#mobile-menu ul li span.menu-toggler').click(function(){
+            $(this).toggleClass('toggler-rotate');
+        })
+    }
+
 });

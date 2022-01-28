@@ -45,7 +45,7 @@ do_action( 'woocommerce_before_lost_password_form' );
 
 								<div class="form-group">
 									<label><?php esc_html_e( 'Enter Email', 'kitolms' ); ?></label>
-									<input class="form-control" type="text" name="user_login" id="user_login" autocomplete="username" placeholder="<?php esc_html_e('support@wpkitolms.com', 'kitolms'); ?>" />
+									<input class="form-control" type="text" name="user_login" id="user_login" autocomplete="username" placeholder="<?php esc_attr_e('support@wpkitolms.com', 'kitolms'); ?>" />
 								</div>
 
 								<div class="clear"></div>
@@ -59,9 +59,6 @@ do_action( 'woocommerce_before_lost_password_form' );
 
 								<?php wp_nonce_field( 'lost_password', 'woocommerce-lost-password-nonce' ); ?>
 							</div>
-						</div>
-						<div class="crs_log__footer d-flex justify-content-between">
-							<div class="fhg_45"><p class="musrt"><?php esc_html_e( 'Don\'t have account?', 'kitolms' ); ?> <a href="signup.html" class="theme-cl">SignUp</a></p></div>
 						</div>
 					</div>
 				</form>
