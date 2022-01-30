@@ -1510,6 +1510,7 @@
   .logo-wrapper h1 {
     font-size: 30px;
     color: #fff;
+    margin: 0;
   }
   .common-menu-wrap .nav>li.ticket-menu a {
     background-color: #FF8A00;

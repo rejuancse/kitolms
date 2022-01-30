@@ -33,6 +33,36 @@ class Kitolms_Theme {
         add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
         add_theme_support( 'automatic-feed-links' );
 
+        $starter_content = array(
+            'kitolms_sidebar' => array(
+                'sidebar',
+                'bottom1',
+                'bottom2'
+            ),
+
+            // Default to a static front page and assign the front and posts pages.
+            'options'   => array(
+                'show_on_front'  => 'page',
+                'page_on_front'  => '{{front}}',
+                'page_for_posts' => '{{blog}}',
+            ),
+    
+            // Set up nav menus for each of the two areas registered in the theme.
+            'nav_menus' => array(
+                // Assign a menu to the "primary" location.
+                'primary' => array(
+                    'name'  => esc_html__( 'Primary menu', 'kitolms' ),
+                    'items' => array(
+                        'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
+                        'page_about',
+                        'page_blog',
+                        'page_contact',
+                    ),
+                ),
+            ),
+        );
+        add_theme_support( 'starter-content', $starter_content );
+
         # Custom Logo.
         add_theme_support( 'custom-logo');
 
@@ -79,13 +109,13 @@ class Kitolms_Theme {
 			array(
 				array(
 					'name'  => __( 'Geen', 'kitolms' ),
-					'slug'  => 'major',
-					'color' => get_theme_mod( 'major_color', '#03b97c' ),
+					'slug'  => 'geen',
+					'color' => '#03b97c',
 				),
 				array(
 					'name'  => __( 'Black', 'kitolms' ),
-					'slug'  => 'kitolms_text',
-					'color' => get_theme_mod( 'text_color', '#3c4852' ),
+					'slug'  => 'black',
+					'color' => '#3c4852',
 				),
 				array(
 					'name'  => __( 'Dark Gray', 'kitolms' ),
@@ -127,18 +157,17 @@ class Kitolms_Theme {
         wp_add_inline_style( 'kitolms-style', Kitolms_Css_Generator() );
 
         # JS.
-        // wp_enqueue_script( 'jquery' );
-        wp_enqueue_script('jquery', KITOLMS_JS.'jquery.min.js',array(),false,true);
+        wp_enqueue_script( 'jquery' );
         wp_enqueue_script('kitolms-magnific-popup', KITOLMS_JS.'jquery.magnific-popup.min.js',array(),false,true);
         wp_enqueue_script('kitolms-popper', KITOLMS_JS.'popper.min.js',array(),false,true);
         wp_enqueue_script('kitolms-bootstrap-min',  KITOLMS_JS.'bootstrap.min.js',array(),false,true);
-        wp_enqueue_script('kitolms-select2',    KITOLMS_JS.'select2.min.js',array(),false,true);
-        wp_enqueue_script('kitolms-slick',  KITOLMS_JS.'slick.js',array(),false,true);
+        wp_enqueue_script('kitolms-select2', KITOLMS_JS.'select2.min.js',array(),false,true);
+        wp_enqueue_script('kitolms-slick', KITOLMS_JS.'slick.js',array(),false,true);
         wp_enqueue_script('kitolms-moment', KITOLMS_JS.'moment.min.js',array(),false,true);
         wp_enqueue_script('kitolms-daterangepicker',    KITOLMS_JS.'daterangepicker.js',array(),false,true);
         wp_enqueue_script('kitolms-metisMenu',  KITOLMS_JS.'metisMenu.min.js',array(),false,true);
         if ( is_singular() ) {wp_enqueue_script( 'comment-reply' );}
-        wp_enqueue_script('kitolms-navigation',  KITOLMS_JS.'navigation.js',array(),false,true);
+        wp_enqueue_script('kitolms-navigation', KITOLMS_JS.'navigation.js',array(),false,true);
         wp_enqueue_script('kitolms-custom', KITOLMS_JS.'custom.js',array(),false,true);
         wp_enqueue_script('kitolms-main', KITOLMS_JS .'main.js',array(),false,true);
 

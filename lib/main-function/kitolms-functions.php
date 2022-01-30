@@ -134,26 +134,26 @@ endif;
 
 if ( ! function_exists( 'kitolms_fonts_url' ) ) :
     function kitolms_fonts_url() {
-    $fonts_url = '';
+        $fonts_url = '';
 
-    $open_sans = _x( 'on', 'Poppins font: on or off', 'kitolms' );
+        $open_sans = _x( 'on', 'Poppins font: on or off', 'kitolms' );
 
-    if ( 'off' !== $open_sans ) {
-    $font_families = array();
+        if ( 'off' !== $open_sans ) {
+            $font_families = array();
 
-    if ( 'off' !== $open_sans ) {
-    $font_families[] = 'Poppins:300,400,500,600,700';
-    }
+            if ( 'off' !== $open_sans ) {
+            $font_families[] = 'Poppins:300,400,500,600,700';
+            }
 
-    $query_args = array(
-    'family'  => urlencode( implode( '|', $font_families ) ),
-    'subset'  => urlencode( 'latin,latin-ext' ),
-    );
+            $query_args = array(
+            'family'  => urlencode( implode( '|', $font_families ) ),
+            'subset'  => urlencode( 'latin,latin-ext' ),
+            );
 
-    $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-    }
+            $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+        }
 
-    return esc_url_raw( $fonts_url );
+        return esc_url_raw( $fonts_url );
     }
 endif;
 
@@ -168,7 +168,7 @@ if(!function_exists('kitolms_breadcrumbs')):
             if(function_exists('is_product')){
                 $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
                 if(is_product()){
-                    echo "<li class='breadcrumb-item'><a class='text-light' href='".esc_url($shop_page_url)."'>Shop</a></li>";
+                    echo "<li class='breadcrumb-item'><a class='text-light' href='".esc_url($shop_page_url)."'>".__('Shop', 'kitolms')."</a></li>";
                 }
             }
         ?>
@@ -226,16 +226,6 @@ if(!function_exists('kitolms_breadcrumbs')):
     <?php
     }
 endif;
-
-/** 
- * Main Menu custom class add
- * */ 
-// function mainmenu_submenu_class($menu) {
-//     $menu = preg_replace('/ class="sub-menu"/','/ class="sub-menu nav-dropdown nav-submenu" /', $menu);  
-//     return $menu;  
-// }
-
-// add_filter('wp_nav_menu','mainmenu_submenu_class');
 
 
 /** 
@@ -325,8 +315,8 @@ if ( ! function_exists( 'kitolms_cart_link_fragment' ) ) {
 /**
  * Add bootstrap class in checkout page.
  */
-add_filter('woocommerce_checkout_fields', 'addBootstrapToCheckoutFields' );
-function addBootstrapToCheckoutFields($fields) {
+add_filter('woocommerce_checkout_fields', 'kitilmsaddBootstrapToCheckoutFields' );
+function kitilmsaddBootstrapToCheckoutFields($fields) {
     foreach ($fields as &$fieldset) {
         foreach ($fieldset as &$field) {
             // if you want to add the form-group class around the label and the input
@@ -344,7 +334,7 @@ function addBootstrapToCheckoutFields($fields) {
  *
  * @param WP_User $user User object.
  */
-function tm_additional_profile_fields( $user ) {
+function kitolms_additional_profile_fields( $user ) {
 
     $facebook = get_the_author_meta( 'facebook', $user->ID);
     $twitter = get_the_author_meta( 'twitter', $user->ID );
@@ -390,15 +380,15 @@ function tm_additional_profile_fields( $user ) {
     <?php
 }
 
-add_action( 'show_user_profile', 'tm_additional_profile_fields' );
-add_action( 'edit_user_profile', 'tm_additional_profile_fields' );
+add_action( 'show_user_profile', 'kitolms_additional_profile_fields' );
+add_action( 'edit_user_profile', 'kitolms_additional_profile_fields' );
 
 /**
  * Save additional profile fields.
  *
  * @param  int $user_id Current user ID.
  */
-function tm_save_profile_fields( $user_id ) {
+function kitolms_save_profile_fields( $user_id ) {
 
     if ( ! current_user_can( 'edit_user', $user_id ) ) {
    	 return false;
@@ -420,8 +410,8 @@ function tm_save_profile_fields( $user_id ) {
     } 
 }
 
-add_action( 'personal_options_update', 'tm_save_profile_fields' );
-add_action( 'edit_user_profile_update', 'tm_save_profile_fields' );
+add_action( 'personal_options_update', 'kitolms_save_profile_fields' );
+add_action( 'edit_user_profile_update', 'kitolms_save_profile_fields' );
 
 
 // Course Price Type

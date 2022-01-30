@@ -34,8 +34,6 @@
 			toggleFocusClassTouchScreen();
 		}
 
-		console.log('siteNavigation', siteNavigation);
-
 		siteNavigation.find( 'a' ).on( 'focus blur', function() {
 			$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
 		});
