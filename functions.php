@@ -39,8 +39,8 @@ include( get_parent_theme_file_path('lib/kitolms-comments.php') );
 /* -------------------------------------------
  * 				Custom body class
  * ------------------------------------------- */
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
+add_action( 'after_setup_theme', 'kitolms_woocommerce_support' );
+function kitolms_woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 

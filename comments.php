@@ -89,7 +89,7 @@ if ($kitolms_discussion->responses > 0) {
                                         'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
                                         'submit_field'         => '<div class="row"><div class="col-lg-12 col-md-12 col-sm-12"><div class="form-group">%1$s %2$s</div></div></div>',
 
-                                        'fields' => apply_filters( 'comment_form_default_fields', array(
+                                        'fields' => apply_filters( 'kitolms_comment_form_default_fields', array(
                                             'author' => '<div class="row"><div class="col-lg-6 col-md-6 col-sm-12">
                                                             <div class="form-group">
                                                                 <input id="author" name="author" type="text" class="form-control" placeholder="Your Name" value="' . esc_attr( $commenter['comment_author'] ) .'">

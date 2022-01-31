@@ -238,8 +238,8 @@ function is_blog () {
 /** 
  * Main Menu custom class add
  * */ 
-add_filter( 'comment_form_default_fields', 'tu_comment_form_change_cookies_consent' );
-function tu_comment_form_change_cookies_consent( $fields ) {
+add_filter( 'kitolms_comment_form_default_fields', 'kitolms_comment_form_change_cookies_consent' );
+function kitolms_comment_form_change_cookies_consent( $fields ) {
 	$commenter = wp_get_current_commenter();
 
 	$consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';

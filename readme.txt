@@ -54,10 +54,8 @@ Kitolms WordPress Theme bundles the following third-party resources:
 
 == Images used in Screenshot of KitoLMS theme ==
 Logo, Copyright © 2022, KitoLMS
-License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
-
 Illustrations and icons used in Screenshot, Copyright © 2022, KitoLMS
-License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
+License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
 Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
 
