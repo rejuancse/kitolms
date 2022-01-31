@@ -146,8 +146,8 @@ if ( ! function_exists( 'kitolms_fonts_url' ) ) :
             }
 
             $query_args = array(
-            'family'  => urlencode( implode( '|', $font_families ) ),
-            'subset'  => urlencode( 'latin,latin-ext' ),
+                'family'  => urlencode( implode( '|', $font_families ) ),
+                'subset'  => urlencode( 'latin,latin-ext' ),
             );
 
             $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
@@ -190,7 +190,7 @@ if(!function_exists('kitolms_breadcrumbs')):
                     <?php $category = get_the_category();
                         if ( $category ) {
                             $catlink = get_category_link( $category[0]->cat_ID );
-                            echo ('<a class="text-light" href="'.esc_url($catlink).'">'.esc_html($category[0]->cat_name).'</a> '.'<span class="raquo">Single Post</span> ');
+                            echo ('<a class="text-light" href="'.esc_url($catlink).'">'.esc_html($category[0]->cat_name).'</a> '.'<span class="raquo">'.__( 'Single Post', 'kitolms' ).'</span> ');
                         } elseif (get_post_type() == 'product'){
                             echo esc_attr(get_the_title());
                         }
@@ -244,37 +244,9 @@ function tu_comment_form_change_cookies_consent( $fields ) {
 
 	$consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 
-	$fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /> ' .'<label for="wp-comment-cookies-consent"> Save my name, email in this browser for the next time I comment.</label></p>';
+	$fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /> ' .'<label for="wp-comment-cookies-consent">'.__( 'Save my name, email in this browser for the next time I comment.', 'kitolms' ).'</label></p>';
 	return $fields;
 }
-
-/* -------------------------------------------
- *   Blog Post view count
- * ------------------------------------------- */
-function getPostViews($postID){
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-        return "0 View";
-    }
-    return $count.' Views';
-}
-
-function setPostViews($postID) {
-    $count_key = 'post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    }else{
-        $count++;
-        update_post_meta($postID, $count_key, $count);
-    }
-}
-
 
 /* -------------------------------------------
  *   Show Header Cart
@@ -394,19 +366,19 @@ function kitolms_save_profile_fields( $user_id ) {
    	 return false;
     }
     if ( isset( $_POST['facebook'] )  ) {
-        update_user_meta( $user_id, 'facebook', $_POST['facebook'] );
+        update_user_meta( $user_id, 'facebook', sanitize_text_field($_POST['facebook']) );
     }
     if ( isset( $_POST['twitter'] ) ) {
-        update_user_meta( $user_id, 'twitter', $_POST['twitter'] );
+        update_user_meta( $user_id, 'twitter', sanitize_text_field($_POST['twitter']) );
     }
     if ( isset( $_POST['linkedin'] ) ) {
-        update_user_meta( $user_id, 'linkedin', $_POST['linkedin'] );
+        update_user_meta( $user_id, 'linkedin', sanitize_text_field($_POST['linkedin']) );
     }
     if ( isset( $_POST['youtube'] ) ) {
-        update_user_meta( $user_id, 'youtube', $_POST['youtube'] );
+        update_user_meta( $user_id, 'youtube', sanitize_text_field($_POST['youtube']) );
     }
     if ( isset( $_POST['dribbble'] ) ) {
-        update_user_meta( $user_id, 'dribbble', $_POST['dribbble'] );
+        update_user_meta( $user_id, 'dribbble', sanitize_text_field($_POST['dribbble']) );
     } 
 }
 
@@ -463,52 +435,52 @@ if(!function_exists('Kitolms_Css_Generator')){
 
         $bstyle = $mstyle = $h1style = $h2style = $h3style = $h4style = $h5style = '';
         # body
-        if ( get_theme_mod( 'body_font_size', '15' ) ) { $bstyle .= 'font-size:'.get_theme_mod( 'body_font_size', '15' ).'px;'; }
-        if ( get_theme_mod( 'body_google_font', 'Muli' ) ) { $bstyle .= 'font-family:'.get_theme_mod( 'body_google_font', 'Muli' ).';'; }
-        if ( get_theme_mod( 'body_font_weight', '400' ) ) { $bstyle .= 'font-weight: '.get_theme_mod( 'body_font_weight', '400' ).';'; }
-        if ( get_theme_mod('body_font_height', '20') ) { $bstyle .= 'line-height: '.get_theme_mod('body_font_height', '20').'px;'; }
+        if ( get_theme_mod( 'body_font_size', '15' ) ) { $bstyle .= 'font-size:'.(int) esc_attr(get_theme_mod( 'body_font_size', '15' ) ).'px;'; }
+        if ( get_theme_mod( 'body_google_font', 'Muli' ) ) { $bstyle .= 'font-family:'.esc_attr(get_theme_mod( 'body_google_font', 'Muli' ) ).';'; }
+        if ( get_theme_mod( 'body_font_weight', '400' ) ) { $bstyle .= 'font-weight: '.(int) esc_attr(get_theme_mod( 'body_font_weight', '400' ) ).';'; }
+        if ( get_theme_mod('body_font_height', '20') ) { $bstyle .= 'line-height: '.(int) esc_attr(get_theme_mod('body_font_height', '20') ).'px;'; }
 
         //menu
         $mstyle = '';
-        if ( get_theme_mod( 'menu_font_size', '14' ) ) { $mstyle .= 'font-size:'.get_theme_mod( 'menu_font_size', '14' ).'px;'; }
-        if ( get_theme_mod( 'menu_google_font', 'Jost' ) ) { $mstyle .= 'font-family:'.get_theme_mod( 'menu_google_font', 'Jost' ).';'; }
-        if ( get_theme_mod( 'menu_font_weight', '500' ) ) { $mstyle .= 'font-weight: '.get_theme_mod( 'menu_font_weight', '500' ).';'; }
-        if ( get_theme_mod('menu_font_height', '18') ) { $mstyle .= 'line-height: '.get_theme_mod('menu_font_height', '18').'px;'; }
+        if ( get_theme_mod( 'menu_font_size', '14' ) ) { $mstyle .= 'font-size:'.(int) esc_attr(get_theme_mod( 'menu_font_size', '14' ) ).'px;'; }
+        if ( get_theme_mod( 'menu_google_font', 'Jost' ) ) { $mstyle .= 'font-family:'.esc_attr(get_theme_mod( 'menu_google_font', 'Jost' ) ).';'; }
+        if ( get_theme_mod( 'menu_font_weight', '500' ) ) { $mstyle .= 'font-weight: '.(int) esc_attr(get_theme_mod( 'menu_font_weight', '500' ) ).';'; }
+        if ( get_theme_mod('menu_font_height', '18') ) { $mstyle .= 'line-height: '.(int) esc_attr(get_theme_mod('menu_font_height', '18') ).'px;'; }
 
         //heading1
         $h1style = '';
-        if ( get_theme_mod( 'h1_font_size', '36' ) ) { $h1style .= 'font-size:'.get_theme_mod( 'h1_font_size', '36' ).'px;'; }
-        if ( get_theme_mod( 'h1_google_font', 'Jost' ) ) { $h1style .= 'font-family:'.get_theme_mod( 'h1_google_font', 'Jost' ).';'; }
-        if ( get_theme_mod( 'h1_font_weight', '600' ) ) { $h1style .= 'font-weight: '.get_theme_mod( 'h1_font_weight', '600' ).';'; }
-        if ( get_theme_mod('h1_font_height', '40') ) { $h1style .= 'line-height: '.get_theme_mod('h1_font_height', '40').'px;'; }
+        if ( get_theme_mod( 'h1_font_size', '36' ) ) { $h1style .= 'font-size:'.(int) esc_attr(get_theme_mod( 'h1_font_size', '36' ) ).'px;'; }
+        if ( get_theme_mod( 'h1_google_font', 'Jost' ) ) { $h1style .= 'font-family:'.esc_attr(get_theme_mod( 'h1_google_font', 'Jost' ) ).';'; }
+        if ( get_theme_mod( 'h1_font_weight', '600' ) ) { $h1style .= 'font-weight: '.(int) esc_attr(get_theme_mod( 'h1_font_weight', '600' ) ).';'; }
+        if ( get_theme_mod('h1_font_height', '40') ) { $h1style .= 'line-height: '.(int) esc_attr(get_theme_mod('h1_font_height', '40') ).'px;'; }
 
         # heading2
         $h2style = '';
-        if ( get_theme_mod( 'h2_font_size', '36' ) ) { $h2style .= 'font-size:'.get_theme_mod( 'h2_font_size', '36' ).'px;'; }
-        if ( get_theme_mod( 'h2_google_font', 'Jost' ) ) { $h2style .= 'font-family:'.get_theme_mod( 'h2_google_font', 'Jost' ).';'; }
-        if ( get_theme_mod( 'h2_font_weight', '600' ) ) { $h2style .= 'font-weight: '.get_theme_mod( 'h2_font_weight', '500' ).';'; }
-        if ( get_theme_mod('h2_font_height', '36') ) { $h2style .= 'line-height: '.get_theme_mod('h2_font_height', '36').'px;'; }
+        if ( get_theme_mod( 'h2_font_size', '36' ) ) { $h2style .= 'font-size:'.(int) esc_attr(get_theme_mod( 'h2_font_size', '36' ) ).'px;'; }
+        if ( get_theme_mod( 'h2_google_font', 'Jost' ) ) { $h2style .= 'font-family:'.esc_attr(get_theme_mod( 'h2_google_font', 'Jost' ) ).';'; }
+        if ( get_theme_mod( 'h2_font_weight', '600' ) ) { $h2style .= 'font-weight: '.(int) esc_attr(get_theme_mod( 'h2_font_weight', '500' ) ).';'; }
+        if ( get_theme_mod('h2_font_height', '36') ) { $h2style .= 'line-height: '.(int) esc_attr(get_theme_mod('h2_font_height', '36') ).'px;'; }
 
         //heading3
         $h3style = '';
-        if ( get_theme_mod( 'h3_font_size', '26' ) ) { $h3style .= 'font-size:'.get_theme_mod( 'h3_font_size', '26' ).'px;'; }
-        if ( get_theme_mod( 'h3_google_font', 'Jost' ) ) { $h3style .= 'font-family:'.get_theme_mod( 'h3_google_font', 'Jost' ).';'; }
-        if ( get_theme_mod( 'h3_font_weight', '600' ) ) { $h3style .= 'font-weight: '.get_theme_mod( 'h3_font_weight', '500' ).';'; }
-        if ( get_theme_mod('h3_font_height', '28') ) { $h3style .= 'line-height: '.get_theme_mod('h3_font_height', '28').'px;'; }
+        if ( get_theme_mod( 'h3_font_size', '26' ) ) { $h3style .= 'font-size:'.(int) esc_attr(get_theme_mod( 'h3_font_size', '26' ) ).'px;'; }
+        if ( get_theme_mod( 'h3_google_font', 'Jost' ) ) { $h3style .= 'font-family:'.esc_attr(get_theme_mod( 'h3_google_font', 'Jost' ) ).';'; }
+        if ( get_theme_mod( 'h3_font_weight', '600' ) ) { $h3style .= 'font-weight: '.(int) esc_attr(get_theme_mod( 'h3_font_weight', '500' ) ).';'; }
+        if ( get_theme_mod('h3_font_height', '28') ) { $h3style .= 'line-height: '.(int) esc_attr(get_theme_mod('h3_font_height', '28') ).'px;'; }
 
         //heading4
         $h4style = '';
-        if ( get_theme_mod( 'h4_font_size', '18' ) ) { $h4style .= 'font-size:'.get_theme_mod( 'h4_font_size', '18' ).'px;'; }
-        if ( get_theme_mod( 'h4_google_font', 'Jost' ) ) { $h4style .= 'font-family:'.get_theme_mod( 'h4_google_font', 'Jost' ).';'; }
-        if ( get_theme_mod( 'h4_font_weight', '600' ) ) { $h4style .= 'font-weight: '.get_theme_mod( 'h4_font_weight', '500' ).';'; }
-        if ( get_theme_mod('h4_font_height', '26') ) { $h4style .= 'line-height: '.get_theme_mod('h4_font_height', '26').'px;'; }
+        if ( get_theme_mod( 'h4_font_size', '18' ) ) { $h4style .= 'font-size:'.(int) esc_attr(get_theme_mod( 'h4_font_size', '18' ) ).'px;'; }
+        if ( get_theme_mod( 'h4_google_font', 'Jost' ) ) { $h4style .= 'font-family:'.esc_attr(get_theme_mod( 'h4_google_font', 'Jost' ) ).';'; }
+        if ( get_theme_mod( 'h4_font_weight', '600' ) ) { $h4style .= 'font-weight: '.(int) esc_attr(get_theme_mod( 'h4_font_weight', '500' ) ).';'; }
+        if ( get_theme_mod('h4_font_height', '26') ) { $h4style .= 'line-height: '.(int) esc_attr(get_theme_mod('h4_font_height', '26') ).'px;'; }
 
         //heading5
         $h5style = '';
-        if ( get_theme_mod( 'h5_font_size', '14' ) ) { $h5style .= 'font-size:'.get_theme_mod( 'h5_font_size', '14' ).'px;'; }
-        if ( get_theme_mod( 'h5_google_font', 'Jost' ) ) { $h5style .= 'font-family:'.get_theme_mod( 'h5_google_font', 'Jost' ).';'; }
-        if ( get_theme_mod( 'h5_font_weight', '600' ) ) { $h5style .= 'font-weight: '.get_theme_mod( 'h5_font_weight', '500' ).';'; }
-        if ( get_theme_mod('h5_font_height', '26') ) { $h5style .= 'line-height: '.get_theme_mod('h5_font_height', '26').'px;'; }
+        if ( get_theme_mod( 'h5_font_size', '14' ) ) { $h5style .= 'font-size:'.(int) esc_attr(get_theme_mod( 'h5_font_size', '14' ) ).'px;'; }
+        if ( get_theme_mod( 'h5_google_font', 'Jost' ) ) { $h5style .= 'font-family:'.esc_attr(get_theme_mod( 'h5_google_font', 'Jost' ) ).';'; }
+        if ( get_theme_mod( 'h5_font_weight', '600' ) ) { $h5style .= 'font-weight: '.(int) esc_attr(get_theme_mod( 'h5_font_weight', '500' ) ).';'; }
+        if ( get_theme_mod('h5_font_height', '26') ) { $h5style .= 'line-height: '.(int) esc_attr(get_theme_mod('h5_font_height', '26') ).'px;'; }
 
         $output .= 'body{'.$bstyle.'}';
         $output .= '.nav-menu>li>a, 
@@ -533,10 +505,10 @@ if(!function_exists('Kitolms_Css_Generator')){
         $logo_width = get_theme_mod( 'logo_width', 0 );
         $logo_height = get_theme_mod( 'logo_height', 0 );
         if($logo_width){
-            $output .= '.nav-brand img{width:'.get_theme_mod( 'logo_width', 150 ).'px; max-width:none;}';
+            $output .= '.nav-brand img{width:'.(int) esc_attr(get_theme_mod( 'logo_width', 150 )).'px; max-width:none;}';
         }
         if ($logo_height) {
-            $output .= '.nav-brand img{height:'.get_theme_mod( 'logo_height' ).'px;}';
+            $output .= '.nav-brand img{height:'.esc_attr(get_theme_mod( 'logo_height' )).'px;}';
         }
 
         $output .= '.hfeed .header.header-light{ background: '.esc_attr( get_theme_mod( 'header_color', '#ffffff' ) ) .'; }';
@@ -549,9 +521,9 @@ if(!function_exists('Kitolms_Css_Generator')){
         /**
          * Sub Header
          */
-        $output .= '.breadcrumbs-wrap .breadcrumb-title {font-size:'.get_theme_mod( 'sub_header_title_size', '36' ).'px;}';
-        $output .= 'section.page-title.bg-cover {padding:'.get_theme_mod( 'sub_header_padding_top', '80' ).'px 0 '.get_theme_mod( 'sub_header_padding_bottom', '80' ).'px; margin-bottom: '.get_theme_mod( 'sub_header_margin_bottom', '0' ).'px;}';
-        $output .= '.breadcrumbs-wrap .breadcrumb-title, .breadcrumb-item a {color:'.get_theme_mod( 'sub_header_text_color', '#fff' ).';}';
+        $output .= '.breadcrumbs-wrap .breadcrumb-title {font-size:'.(int) esc_attr(get_theme_mod( 'sub_header_title_size', '36' ) ).'px;}';
+        $output .= 'section.page-title.bg-cover {padding:'.(int) esc_attr(get_theme_mod( 'sub_header_padding_top', '80' ) ).'px 0 '.esc_attr(get_theme_mod( 'sub_header_padding_bottom', '80' ) ).'px; margin-bottom: '.esc_attr(get_theme_mod( 'sub_header_margin_bottom', '0' ) ).'px;}';
+        $output .= '.breadcrumbs-wrap .breadcrumb-title, .breadcrumb-item a {color:'.esc_attr(get_theme_mod( 'sub_header_text_color', '#fff' ) ).';}';
 
 
         /**

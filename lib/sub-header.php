@@ -58,7 +58,7 @@
                             if (get_theme_mod( 'header_title_enable', true )) {
                                 if($wp_query->queried_object->name != ''){
                                     if($wp_query->queried_object->name == 'product' ){
-                                        echo '<h1 class="breadcrumb-title">'.esc_html__('Shop','kitolms').'</h1>';
+                                        echo '<h1 class="breadcrumb-title">'.esc_html__('Shop', 'kitolms').'</h1>';
                                     }else{
                                         echo '<h1 class="breadcrumb-title">'.wp_kses_post($wp_query->queried_object->name).'</h1>';    
                                     }
@@ -75,18 +75,18 @@
                                     }
                                 }
                                 if (get_theme_mod( 'header_title_enable', true )) {
-                                    echo '<h1 class="breadcrumb-title">'.esc_html__('Search','kitolms').'</h1>';
+                                    echo '<h1 class="breadcrumb-title">'.esc_html__('Search', 'kitolms').'</h1>';
                                 }
                             }
                             else if( is_home() ){
                                 if (get_theme_mod( 'subtitle_enable', true )) {
                                     if (get_theme_mod( 'header_subtitle_text', '' )){
-                                        echo '<h3 class="page-subleading">'. wp_kses_post(get_theme_mod( 'header_subtitle_text','' )).'</h3>';
+                                        echo '<h3 class="page-subleading">'. wp_kses_post(get_theme_mod( 'header_subtitle_text', '' )).'</h3>';
                                     }
                                 }
                                 if (get_theme_mod( 'header_title_enable', true )) {
                                     if (get_theme_mod( 'header_title_text', 'Latest Blog' )){
-                                        echo '<h1 class="breadcrumb-title">'. wp_kses_post(get_theme_mod( 'header_title_text','Latest Blog' )).'</h1>';
+                                        echo '<h1 class="breadcrumb-title">'. wp_kses_post(get_theme_mod( 'header_title_text', 'Latest Blog' )).'</h1>';
                                     }
                                 }
                             }
@@ -94,23 +94,15 @@
 
                                 if (get_theme_mod( 'subtitle_enable', true )) {
                                     if (get_theme_mod( 'header_subtitle_text', '' )){
-                                        echo '<h3 class="page-subleading">'. wp_kses_post(get_theme_mod( 'header_subtitle_text','' )).'</h3>';
+                                        echo '<h3 class="page-subleading">'. wp_kses_post(get_theme_mod( 'header_subtitle_text', '' )).'</h3>';
                                     }
                                 }
                                 if (get_theme_mod( 'header_title_enable', true )) {
-                                    if (get_post_type() == 'event') {
-                                        echo '<h1 class="breadcrumb-title">'. esc_html__( 'Event Details','kitolms' ).'</h1>';
-                                    } elseif (get_post_type() == 'album') {
-                                        echo '<h1 class="breadcrumb-title">'. esc_html__( 'Albums','kitolms' ).'</h1>';
-                                    } elseif (get_post_type() == 'gallery') {
-                                        echo '<h1 class="breadcrumb-title">'. esc_html__( 'Gallery','kitolms' ).'</h1>';
-                                    } elseif (get_post_type() == 'performer') {
-                                        echo '<h1 class="breadcrumb-title">'. esc_html__( 'Performer','kitolms' ).'</h1>';
-                                    }elseif(get_post_type() == 'product'){
+                                    if(get_post_type() == 'product'){
                                         echo '<h2 class="breadcrumb-title">'.esc_html__('Product Details','kitolms').'</h1>';
                                     }else {
                                         if (get_theme_mod( 'header_title_text', 'Latest Blog' )){
-                                            echo '<h1 class="breadcrumb-title">'. wp_kses_post(get_theme_mod( 'header_title_text','Latest Blog' )).'</h1>';
+                                            echo '<h1 class="breadcrumb-title">'. wp_kses_post(get_theme_mod( 'header_title_text', 'Latest Blog' )).'</h1>';
                                         }
                                     }
                                 }

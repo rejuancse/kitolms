@@ -4,7 +4,7 @@ Tags: education, course, blog, news, flexible-header, right-sidebar, custom-back
 Requires at least: 4.9.6
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v3.0 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
@@ -52,7 +52,27 @@ Kitolms WordPress Theme bundles the following third-party resources:
 * Bootstrap Navwalker by Edward McIntyre (GPL-3.0+) https://github.com/wp-bootstrap/wp-bootstrap-navwalker
 
 
+== Images used in Screenshot of KitoLMS theme ==
+Logo, Copyright © 2022, KitoLMS
+License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
+
+Illustrations and icons used in Screenshot, Copyright © 2022, KitoLMS
+License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
+
+Unless otherwise specified, all the theme files, scripts and images including the screenshot image are licensed under [GNU GPL] (http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
+
+
 == Changelog ==
+
+= 1.0.2 [31/01/2022] =
+* Fixed: No Console issues or logs issue
+* Fixed: Copyright message issue
+* Fixed: Starter Content issue
+* Fixed: Escaping and attributes issue
+* Fixed: Minification of scripts issue
+* Fixed: Images and illustrations license issue
+* Fixed: Links within content must be underlined issue
+* Fixed: Keyboard navigation issue
 
 = 1.0.1 =
 * Released: January 27, 2022

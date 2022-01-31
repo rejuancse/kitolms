@@ -62,7 +62,7 @@ if ( ! function_exists( 'kitolms_comment_form' ) ) :
 					<?php 
 						$commenter = wp_get_current_commenter();
 						$comments_args = array(
-							'label_submit'         =>'Submit Now',
+							'label_submit'         => __('Submit Now', 'kitolms'),
 							'comment_form_top'     => 'bt',
 							'id_form'              => 'commentform',
 							'id_submit'            => 'submit',

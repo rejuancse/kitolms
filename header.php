@@ -84,7 +84,7 @@ $header_fixed = get_theme_mod( 'header_fixed', false ) ? 'sticky-menu' : '';
 											'container'           => false,
 											'menu_class'          => 'nav navbar-nav',
 											'fallback_cb'         => 'wp_page_menu',
-											'depth'               => 3,
+											'depth'               => 4,
 											'walker'              => new kitolms_mobile_navwalker()
 											)
 										); 

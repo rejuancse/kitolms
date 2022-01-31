@@ -164,10 +164,10 @@ class Kitolms_Theme {
         wp_enqueue_script('kitolms-select2', KITOLMS_JS.'select2.min.js',array(),false,true);
         wp_enqueue_script('kitolms-slick', KITOLMS_JS.'slick.js',array(),false,true);
         wp_enqueue_script('kitolms-moment', KITOLMS_JS.'moment.min.js',array(),false,true);
-        wp_enqueue_script('kitolms-daterangepicker',    KITOLMS_JS.'daterangepicker.js',array(),false,true);
         wp_enqueue_script('kitolms-metisMenu',  KITOLMS_JS.'metisMenu.min.js',array(),false,true);
         if ( is_singular() ) {wp_enqueue_script( 'comment-reply' );}
         wp_enqueue_script('kitolms-navigation', KITOLMS_JS.'navigation.js',array(),false,true);
+        wp_enqueue_script( 'kito-focus-fix', KITOLMS_JS . 'skip-link-focus-fix.js', array(), false, true );
         wp_enqueue_script('kitolms-custom', KITOLMS_JS.'custom.js',array(),false,true);
         wp_enqueue_script('kitolms-main', KITOLMS_JS .'main.js',array(),false,true);
 

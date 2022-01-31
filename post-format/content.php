@@ -40,14 +40,6 @@
             <div class="crs_fl_last">
                 <div class="foot_list_info">
                     <ul>
-                        <?php if(get_theme_mod( 'blog_hit', true )) : ?>
-                            <li>
-                                <div class="elsio_ic"><i class="fa fa-eye text-success"></i></div>
-                                <div class="elsio_tx">
-                                    <?php echo getPostViews(get_the_ID()); ?>
-                                </div>
-                            </li>
-                        <?php endif; ?>
                         <?php if(get_theme_mod( 'blog_date', true )) : ?>
                             <li>
                                 <div class="elsio_ic">
@@ -64,8 +56,6 @@
         </div>
     </div>
 <?php } else { ?>
-
-    <?php setPostViews(get_the_ID()); ?>
 
     <div class="article_detail_wrapss single_article_wrap format-standard">
         <div class="article_body_wrap">
