@@ -27,7 +27,7 @@ $header_fixed = get_theme_mod( 'header_fixed', false ) ? 'sticky-menu' : '';
 	<header id="masthead" class="site-header header">
 		<div class="container">
 			<div class="main-menu-wrap row clearfix">
-				<div class="col-sm-6 col-md-3 col-5 align-self-center">
+				<div class="col-sm-6 col-md-3 col-9 align-self-center">
 					<div class="kitolms-navbar-header">
 						<div class="logo-wrapper">
 							<?php if( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
@@ -46,19 +46,17 @@ $header_fixed = get_theme_mod( 'header_fixed', false ) ? 'sticky-menu' : '';
 				</div><!--/.col-sm-2-->
 
 				<!-- Mobile Menu in Search -->
-				<div class="mobile-register col-sm-6 col-md-9 col-7 d-lg-none align-self-center align-self-end"> 
-					<div id="site-navigation" class="main-navigation toggled">
-						<div class="navbar-header clearfix">
-							<button id="kitolms-navmenu" class="menu-toggle navbar-toggle kitolms-navmenu-button" aria-controls="primary-menu" aria-expanded="false" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="slicknav_icon kitolms-navmenu-button-open"></span>
-							</button>
-						</div>
-					</div><!-- #site-navigation -->
+				<div class="mobile-register col-sm-6 col-md-9 col-3 d-lg-none align-self-center align-self-end">
+					<div class="navbar-header clearfix">
+						<button id="kitolms-navmenu" class="menu-toggle navbar-toggle kitolms-navmenu-button" aria-controls="primary-menu" aria-expanded="false" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="slicknav_icon kitolms-navmenu-button-open"></span>
+						</button>
+					</div>
 				</div>
 
-				<div class="col-sm-6 col-md-9 col-7 common-menu d-none d-lg-block">
+				<div class="col-sm-6 col-md-9 col-6 common-menu d-none d-lg-block">
 					<?php if ( has_nav_menu( 'primary' ) ) { ?>
-						<div id="main-menu" class="common-menu-wrap">
+						<div id="main-menu" class="main-navigation common-menu-wrap">
 							<?php 
 								wp_nav_menu(  array(
 										'theme_location' => 'primary',
@@ -73,28 +71,25 @@ $header_fixed = get_theme_mod( 'header_fixed', false ) ? 'sticky-menu' : '';
 					<?php } ?>
 				</div><!--/.col-sm-9--> 
 
-				<div id="site-navigation" class="main-navigation toggled">
-					<ul id="primary-menu" class="nav navbar-nav nav-menu">
-						<div id="mobile-menu" class="hidden-lg-up d-lg-none">
-							<div class="collapse navbar-collapse">
-								<?php 
-									if ( has_nav_menu( 'primary' ) ) {
-										wp_nav_menu( array(
-											'theme_location'      => 'primary',
-											'container'           => false,
-											'menu_class'          => 'nav navbar-nav',
-											'fallback_cb'         => 'wp_page_menu',
-											'depth'               => 4,
-											'walker'              => new kitolms_mobile_navwalker()
-											)
-										); 
-									}
-								?>
-							</div>
-						</div><!--/.#mobile-menu-->
-					</ul>
-				</div><!-- #site-navigation -->
-
+				<ul id="primary-menu" class="nav navbar-nav nav-menu">
+					<div id="mobile-menu" class="hidden-lg-up d-lg-none">
+						<div class="collapse navbar-collapse">
+							<?php 
+								if ( has_nav_menu( 'primary' ) ) {
+									wp_nav_menu( array(
+										'theme_location'      => 'primary',
+										'container'           => false,
+										'menu_class'          => 'nav navbar-nav',
+										'fallback_cb'         => 'wp_page_menu',
+										'depth'               => 4,
+										'walker'              => new kitolms_mobile_navwalker()
+										)
+									); 
+								}
+							?>
+						</div>
+					</div><!--/.#mobile-menu-->
+				</ul>
 			</div><!--/.main-menu-wrap-->     
 		</div><!--/.container--> 
 	</header><!--/.header-->

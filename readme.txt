@@ -62,6 +62,12 @@ Unless otherwise specified, all the theme files, scripts and images including th
 
 == Changelog ==
 
+= 1.0.3 [31/01/2022] =
+* Fixed: Starter content issue
+* Fixed: Keyboard navigation issue
+* Fixed: readme.txt issue
+* Fixed: minification of scripts issue
+
 = 1.0.2 [31/01/2022] =
 * Fixed: No Console issues or logs issue
 * Fixed: Copyright message issue
