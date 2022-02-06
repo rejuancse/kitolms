@@ -7230,6 +7230,7 @@ img.img-footer.small {
   } */
 h4.widget_title {
     margin-bottom: 10px;
+    margin-top: 15px;
     font-weight: 600;
     font-size: 15px;
     text-transform: uppercase;
@@ -8056,6 +8057,28 @@ ol.wp-block-latest-comments {
     }
     .footer-middle {
         padding: 30px 0;
+    }
+    .footer_widget form.search-form input[type="search"] {
+        border-radius: 4px;
+        border: 1px solid #ebedf5;
+        background: #f9fafc;
+        font-size: 12px;
+        padding: 10px 10px 10px 12px;
+        height: 46px;
+        width: 242px;
+    }
+    .footer_widget .search-form input.search-submit {
+        box-shadow: none;
+        outline: none;
+        cursor: pointer;
+        background: #03b97c;
+        color: #fff;
+        border-radius: 4px;
+        border: 1px solid #03b97c;
+        font-size: 14px;
+        padding: 10px 20px 10px 20px;
+        height: 46px;
+        margin-left: 6px;
     }
     .aps_wrapb {
         padding: 0.5rem 0.8rem;

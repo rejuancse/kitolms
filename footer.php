@@ -28,7 +28,7 @@
                     <p class="mb-0">
                         <?php
                         /* translators: 1: Theme name, 2: Theme author. */
-                        printf( esc_html__( '%1$s %2$s.', 'kitolms' ), '2022 Kitolms. ', 'All Rights Reserved' );
+                        printf( esc_html__( '%1$s %2$s.', 'kitolms' ), 'Proudly powered by KITOLMS. ', 'All Rights Reserved' );
                         ?>
                     </p>
                 </div>

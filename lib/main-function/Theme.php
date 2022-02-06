@@ -34,24 +34,60 @@ class Kitolms_Theme {
         add_theme_support( 'automatic-feed-links' );
 
         $starter_content = array(
-            'kitolms_sidebar' => array(
-                'sidebar',
-                'bottom1',
-                'bottom2'
-            ),
+            'widgets'     => array(
 
+                'bottom1' => array(
+                    'text_world' => array(
+                        'text',
+                        array(
+                            'title' => 'Do You Need Help With Anything?',
+                            'text'  => 'Receive updates, hot deals, tutorials, discounts sent straignt in your inbox every month',
+                        )
+                    ),
+                    'search',
+                ),
+
+                // Add the core-defined business info widget to the footer 1 area.
+                'bottom2' => array(
+                    'text_business_info',
+                    'text_about',
+                    'recent-posts',
+                ),
+            ),
+    
+            // Specify the core-defined pages to create and add custom thumbnails to some of them.
+            'posts'       => array(
+                'home',
+                'about',
+                'contact',
+                'blog',
+                'homepage-section',
+                'my-account' => array(
+                    'title' => '{{account-espresso}}',
+                ),
+            ),
+    
             // Default to a static front page and assign the front and posts pages.
-            'options'   => array(
+            'options'     => array(
                 'show_on_front'  => 'page',
-                'page_on_front'  => '{{front}}',
+                'page_on_front'  => '{{home}}',
                 'page_for_posts' => '{{blog}}',
             ),
     
+            // Set the front page section theme mods to the IDs of the core-registered pages.
+            'theme_mods'  => array(
+                'panel_1' => '{{homepage-section}}',
+                'panel_2' => '{{about}}',
+                'panel_3' => '{{blog}}',
+                'panel_4' => '{{contact}}',
+                'panel_5' => '{{my-account}}',
+            ),
+    
             // Set up nav menus for each of the two areas registered in the theme.
-            'nav_menus' => array(
-                // Assign a menu to the "primary" location.
-                'primary' => array(
-                    'name'  => esc_html__( 'Primary menu', 'kitolms' ),
+            'nav_menus'   => array(
+                // Assign a menu to the "top" location.
+                'primary'    => array(
+                    'name'  => esc_html__( 'Primary Menu', 'kitolms' ),
                     'items' => array(
                         'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
                         'page_about',

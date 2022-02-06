@@ -546,3 +546,54 @@ if(!function_exists('Kitolms_Css_Generator')){
         return $output;
     }
 }
+
+
+/*
+* KitoLms Customize Register
+*/ 
+function kitolms_customize_register( $wp_customize ) {
+
+	// Add Content section.
+	$wp_customize->add_section(
+		'kitolms_content_options',
+		array(
+			'title'    => esc_html__( 'KitoLms Options', 'kitolms' ),
+			'priority' => 10,
+		)
+	);
+
+    //  =============================
+	//  = Button Name              =
+	//  =============================
+	$wp_customize->add_setting('kitolms_btn_name', array(
+		'default'        => 'Get Started',
+		'capability'     => 'edit_theme_options',
+		'type'           => 'theme_mod',
+        'sanitize_callback'  => 'esc_attr',
+	));
+
+	$wp_customize->add_control('kitolms_btn_name', array(
+		'label'      => __('Button Name', 'kitolms'),
+		'section'    => 'kitolms_content_options',
+		'settings'   => 'kitolms_btn_name',
+		'transport'  => 'refresh'
+	));  
+
+	//  =============================
+	//  = Button URL              =
+	//  =============================
+	$wp_customize->add_setting('kitolms_btn_url', array(
+		'default'        => '#',
+		'capability'     => 'edit_theme_options',
+		'type'           => 'theme_mod',
+        'sanitize_callback'  => 'esc_attr',
+	));
+
+	$wp_customize->add_control('kitolms_btn_url', array(
+		'label'      => __('Button URL', 'kitolms'),
+		'section'    => 'kitolms_content_options',
+		'settings'   => 'kitolms_btn_url',
+		'transport'  => 'refresh'
+	));   
+}
+add_action( 'customize_register', 'kitolms_customize_register' );

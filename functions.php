@@ -49,8 +49,12 @@ function kitolms_woocommerce_support() {
  * ------------------------------------------- */
 add_filter( 'wp_nav_menu_items', 'kitolms_custom_menu_item', 10, 2 );
 function kitolms_custom_menu_item ( $items, $args ) {
+
+    $kitolms_btn_name = get_theme_mod('kitolms_btn_name', 'Get Started');
+    $kitolms_btn_url = get_theme_mod('kitolms_btn_url');
+
     $items .= '<li class="menu-item">
-        <a href="'.esc_url(home_url()).'/my-account/" class="text-white add-listing btn theme-bg">'.__('Get Started ', 'kitolms').'</a> 
+        <a href="'.esc_url($kitolms_btn_url).'" class="text-white add-listing btn theme-bg">'.$kitolms_btn_name.'</a> 
     </li>';
     return $items;
 }
