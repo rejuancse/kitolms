@@ -4,7 +4,7 @@ Tags: education, course, blog, news, flexible-header, right-sidebar, custom-back
 Requires at least: 4.9.6
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GNU General Public License v3.0 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
@@ -63,12 +63,14 @@ the directory of the stable readme.txt.
 
 == Changelog ==
 
-= 1.0.3 [31/01/2022] =
+= 1.0.4 [06/02/2022] =
+* Fixed: CSS issue
+
+= 1.0.3 [06/02/2022] =
 * Fixed: Starter content issue
 * Fixed: Keyboard navigation issue
 * Fixed: readme.txt issue
 * Fixed: minification of scripts issue
-
 
 = 1.0.2 [31/01/2022] =
 * Fixed: No Console issues or logs issue
