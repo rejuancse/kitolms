@@ -4,7 +4,7 @@ Tags: education, course, blog, news, flexible-header, right-sidebar, custom-back
 Requires at least: 4.9.6
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GNU General Public License v3.0 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
@@ -52,16 +52,21 @@ Kitolms WordPress Theme bundles the following third-party resources:
 * Bootstrap Navwalker by Edward McIntyre (GPL-3.0+) https://github.com/wp-bootstrap/wp-bootstrap-navwalker
 
 
-== Images ==
-  * https://www.pexels.com/photo/mother-and-daughter-bonding-3985033/ [CC0] (https://www.pexels.com/license/)
-
 == Screenshots ==
 
-1. This screenshot description corresponds to screenshot1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
+Image for theme screenshot, Copyright Direct Media
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/mother-child-1QSVAPCGK5
+
+1. This screenshot description corresponds to screenshot.(png|jpg|jpeg|gif). Note that the screenshot is taken from
 the directory of the stable readme.txt.
 
 
 == Changelog ==
+
+= 1.0.5 [11/02/2022] =
+* Fixed: Image License issue
+* Fixed: Demo content
 
 = 1.0.4 [06/02/2022] =
 * Fixed: CSS issue

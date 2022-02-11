@@ -33,72 +33,6 @@ class Kitolms_Theme {
         add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form' ) );
         add_theme_support( 'automatic-feed-links' );
 
-        $starter_content = array(
-            'widgets'     => array(
-
-                'bottom1' => array(
-                    'text_world' => array(
-                        'text',
-                        array(
-                            'title' => 'Do You Need Help With Anything?',
-                            'text'  => 'Receive updates, hot deals, tutorials, discounts sent straignt in your inbox every month',
-                        )
-                    ),
-                    'search',
-                ),
-
-                // Add the core-defined business info widget to the footer 1 area.
-                'bottom2' => array(
-                    'text_business_info',
-                    'text_about',
-                    'recent-posts',
-                ),
-            ),
-    
-            // Specify the core-defined pages to create and add custom thumbnails to some of them.
-            'posts'       => array(
-                'home',
-                'about',
-                'contact',
-                'blog',
-                'homepage-section',
-                'my-account' => array(
-                    'title' => '{{account-espresso}}',
-                ),
-            ),
-    
-            // Default to a static front page and assign the front and posts pages.
-            'options'     => array(
-                'show_on_front'  => 'page',
-                'page_on_front'  => '{{home}}',
-                'page_for_posts' => '{{blog}}',
-            ),
-    
-            // Set the front page section theme mods to the IDs of the core-registered pages.
-            'theme_mods'  => array(
-                'panel_1' => '{{homepage-section}}',
-                'panel_2' => '{{about}}',
-                'panel_3' => '{{blog}}',
-                'panel_4' => '{{contact}}',
-                'panel_5' => '{{my-account}}',
-            ),
-    
-            // Set up nav menus for each of the two areas registered in the theme.
-            'nav_menus'   => array(
-                // Assign a menu to the "top" location.
-                'primary'    => array(
-                    'name'  => esc_html__( 'Primary Menu', 'kitolms' ),
-                    'items' => array(
-                        'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
-                        'page_about',
-                        'page_blog',
-                        'page_contact',
-                    ),
-                ),
-            ),
-        );
-        add_theme_support( 'starter-content', $starter_content );
-
         # Custom Logo.
         add_theme_support( 'custom-logo');
 
@@ -167,9 +101,97 @@ class Kitolms_Theme {
 		// Add support for custom line height.
 		add_theme_support( 'custom-line-height' );
 
-        if ( ! isset( $content_width ) ){
-            $content_width = 660;
-        }
+        $starter_content = array(
+            'widgets'     => array(
+                'bottom1' => array(
+                    'text_world' => array(
+                        'text',
+                        array(
+                            'title' => 'Do You Need Help With Anything?',
+                            'text'  => 'Receive updates, hot deals, tutorials, discounts sent straignt in your inbox every month',
+                        )
+                    ),
+                    'search',
+                ),
+
+                // Add the core-defined business info widget to the footer 1 area.
+                'bottom2' => array(
+                    'text_business_info',
+                    'text_about',
+                    'recent-posts',
+                ),
+            ),
+    
+            // Specify the core-defined pages to create and add custom thumbnails to some of them.
+            'posts'       => array(
+                'home',
+                'about',
+                'contact',
+                'blog'             => array(
+                    'thumbnail' => '{{image-coffee}}',
+                ),
+                'homepage-section' => array(
+                    'thumbnail' => '{{image-homebanner}}',
+                ),
+            ),
+
+            // Create the custom image attachments used as post thumbnails for pages.
+            'attachments' => array(
+                'image-homebanner' => array(
+                    'post_title' => _x( 'Home Banner', 'Theme starter content', 'kitolms' ),
+                    'file'       => 'assets/images/banner.jpg', // URL relative to the template directory.
+                ),
+                'image-sandwich' => array(
+                    'post_title' => _x( 'Sandwich', 'Theme starter content', 'kitolms' ),
+                    'file'       => 'assets/images/sandwich.jpg',
+                ),
+                'image-coffee'   => array(
+                    'post_title' => _x( 'Coffee', 'Theme starter content', 'kitolms' ),
+                    'file'       => 'assets/images/banner.jpg',
+                ),
+            ),
+    
+            // Default to a static front page and assign the front and posts pages.
+            'options'     => array(
+                'show_on_front'  => 'page',
+                'page_on_front'  => '{{home}}',
+                'page_for_posts' => '{{blog}}',
+            ),
+    
+            // Set the front page section theme mods to the IDs of the core-registered pages.
+            'theme_mods'  => array(
+                'panel_1' => '{{homepage-section}}',
+                'panel_2' => '{{about}}',
+                'panel_3' => '{{blog}}',
+                'panel_4' => '{{contact}}',
+            ),
+    
+            // Set up nav menus for each of the two areas registered in the theme.
+            'nav_menus'   => array(
+                // Assign a menu to the "top" location.
+                'primary'    => array(
+                    'name'  => esc_html__( 'Primary Menu', 'kitolms' ),
+                    'items' => array(
+                        'link_home', 
+                        'page_about',
+                        'page_blog',
+                        'page_contact',
+                    ),
+                ),
+            ),
+        );
+    
+        /**
+         * Filters KitoLms array of starter content.
+         *
+         * @since KitoLms
+         *
+         * @param array $starter_content Array of starter content.
+         */
+        $starter_content = apply_filters( 'kitolms_starter_content', $starter_content );
+
+        add_theme_support( 'starter-content', $starter_content );
+
     }
 
     public function kitolms_style() {
