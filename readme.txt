@@ -4,7 +4,7 @@ Tags: education, course, blog, news, flexible-header, right-sidebar, custom-back
 Requires at least: 4.9.6
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 1.0.5
+Stable tag: 1.0.7
 License: GNU General Public License v3.0 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
 
@@ -64,6 +64,13 @@ the directory of the stable readme.txt.
 
 == Changelog ==
 
+= 1.0.7 [16/06/2024] =
+* Added: WooCommerce script updated
+* Added: CSS issue fixed
+
+= 1.0.6 [21/02/2022] =
+* Added: Theme URI and Author URI
+
 = 1.0.5 [11/02/2022] =
 * Fixed: Image License issue
 * Fixed: Demo content
@@ -91,3 +98,4 @@ the directory of the stable readme.txt.
 * Released: January 27, 2022
 
 Initial release
+

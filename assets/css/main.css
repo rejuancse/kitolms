@@ -6,10 +6,10 @@
 # Inner page design
 # General Features
 # Blog Designs
-# Education Detail 
+# Education Detail
 # E-Commerce & Product Designs
 # Dashboard Design
-# Footer Start 
+# Footer Start
 # Responsiveness Start
 ------------- List Of Table ----------*/
 
@@ -1556,7 +1556,7 @@ span.select2-selection.select2-selection--single {
     background-color: #ffffff;
     border: 1px solid #f4f5f7;
     padding: 10px 0;
-} 
+}
 
 .main-navigation ul ul ul {
 	left: -999em;
@@ -1687,7 +1687,7 @@ span.select2-selection.select2-selection--single {
     -webkit-transition: 400ms;
     font-family: "Jost", sans-serif;
     text-decoration: none;
-} 
+}
 .logo-wrapper {
     padding: 12px 0;
 }
@@ -1769,7 +1769,7 @@ span.select2-selection.select2-selection--single {
     transform: translateY(0);
     transition: opacity 0.15s linear, transform 0.15s linear;
     visibility: visible;
-} 
+}
 
 
 .common-menu-wrap .nav > li:hover > ul {
@@ -1800,7 +1800,7 @@ span.select2-selection.select2-selection--single {
 }
 .common-menu-wrap .nav > li.fixed-menu a:hover {
     color: #fff;
-} 
+}
 .common-menu-wrap .nav > li ul {
     background-color: #fff;
 }
@@ -1908,7 +1908,7 @@ span.select2-selection.select2-selection--single {
     padding: 10px 30px;
     margin: 15px 0;
     background: var(--kitolms-major-color);
-} 
+}
 
 /* -------------------------------------- *
   *           17. Mobile Menu               *
@@ -4674,7 +4674,7 @@ span.tes_quote {
 }
 
 /*==================================================
-      Education Detail 
+      Education Detail
   =================================================*/
 /*--------------- Education Detail ----------------*/
 .ed_detail_head {
@@ -6240,7 +6240,7 @@ ul.cart_list li strong {
 .woocommerce.single_product.quick_view_wrap {
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 .single_product.quick_view_wrap .woo-single-images {
     width: 50%;
@@ -7121,7 +7121,7 @@ th.next.available,
     padding-top: 1rem;
 }
 /*-------------------------------------------------
-    Footer Start   
+    Footer Start
   --------------------------------------------------*/
 /*---------- Call To Action -------------------*/
 .call_action_wrap-wrap {
@@ -7636,7 +7636,7 @@ section.woocommerce-customer-details {
     display: block;
 }
 
-/* 
+/*
   * Course author
   * */
 .tutor-star-rating-group {

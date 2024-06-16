@@ -12,7 +12,7 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.5.2
+ * @version 7.0.2
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -26,21 +26,19 @@ do_action( 'woocommerce_before_lost_password_form' );
 <section>
 	<div class="container">
 		<div class="row justify-content-center">
-		
 			<div class="col-xl-7 col-lg-8 col-md-12 col-sm-12">
 				<form method="post" class="woocommerce-ResetPassword lost_reset_password">
 					<div class="crs_log_wrap">
 						<div class="crs_log__thumb">
 							<img src="<?php echo esc_url($banner_img); ?>" class="img-fluid" alt="<?php  esc_html_e( 'Forgot Password banner image', 'kitolms' ); ?>" />
 						</div>
+
 						<div class="crs_log__caption">
 							<div class="rcs_log_123">
 								<div class="rcs_ico"><i class="fas fa-lock"></i></div>
 							</div>
-							
 							<div class="rcs_log_124">
 								<div class="Lpo09"><h4><?php esc_html_e( 'Forgot password', 'kitolms' ); ?></h4></div>
-
 								<p><?php echo apply_filters( 'woocommerce_lost_password_message', esc_html__( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'kitolms' ) ); ?></p>
 
 								<div class="form-group">
@@ -49,7 +47,7 @@ do_action( 'woocommerce_before_lost_password_form' );
 								</div>
 
 								<div class="clear"></div>
-								
+
 								<?php do_action( 'woocommerce_lostpassword_form' ); ?>
 
 								<div class="form-group">
@@ -64,8 +62,6 @@ do_action( 'woocommerce_before_lost_password_form' );
 				</form>
 				<?php do_action( 'woocommerce_after_lost_password_form' ); ?>
 			</div>
-
 		</div>
 	</div>
 </section>
-<!-- ============================ Login Wrap ================================== -->

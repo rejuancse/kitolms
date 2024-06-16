@@ -12,7 +12,7 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.4.4
+ * @version 7.0.2
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -26,13 +26,12 @@ if ( ! wc_coupons_enabled() ) { // @codingStandardsIgnoreLine.
 </div>
 
 <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
-
 	<p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'kitolms' ); ?></p>
+
 	<div class="form-group">
 		<p class="form-row-first input-with-icon">
 			<input type="text" name="coupon_code" class="input-text form-control" placeholder="<?php esc_attr_e( 'Coupon code', 'kitolms' ); ?>" id="coupon_code" value="" />
 		</p>
-
 		<p class="form-row form-row-last">
 			<button type="submit" class="btn theme-bg btn-md" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'kitolms' ); ?>"><?php esc_html_e( 'Apply coupon', 'kitolms' ); ?></button>
 		</p>
